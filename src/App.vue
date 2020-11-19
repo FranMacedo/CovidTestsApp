@@ -30,7 +30,8 @@
 
 <script>
 import Map from './components/Map';
-import axios from "axios";
+// import axios from "axios";
+import json from './json/data.json'
 
 export default {
   name: 'App',
@@ -41,7 +42,7 @@ export default {
   },
 
   data: () => ({
-    postos: null,
+    postos: json,
     loading: true,
     errored: false
 
@@ -49,17 +50,17 @@ export default {
 
   mounted () {
  
-
-     axios
-      .get('http://testescovid.tk/api/labs/')
-      .then(response => {
-        this.postos = response.data
-      })
-      .catch(error => {
-        console.log(error)
-        this.errored = true
-      })
-      .finally(() => this.loading = false)
+this.loading = false
+    //  axios
+    //   .get('http://testescovid.tk/api/labs/')
+    //   .then(response => {
+    //     this.postos = response.data
+    //   })
+    //   .catch(error => {
+    //     console.log(error)
+    //     this.errored = true
+    //   })
+    //   .finally(() => this.loading = false)
   }
 };
 </script>
